@@ -10,6 +10,7 @@
     ../../modules/home-manager/rofi.nix
     ../../modules/home-manager/udiskie.nix
     ../../modules/home-manager/gtk.nix
+    ../../modules/home-manager/bash.nix
   ];
 
   home.username = "david";

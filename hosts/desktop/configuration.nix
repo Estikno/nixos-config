@@ -58,6 +58,7 @@
     ripgrep
     bat
     bibata-cursors 
+    unzip
   ];
 
   fonts.packages = with pkgs; [
