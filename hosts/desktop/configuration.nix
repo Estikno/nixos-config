@@ -57,6 +57,7 @@
     fzf
     ripgrep
     bat
+    bibata-cursors 
   ];
 
   fonts.packages = with pkgs; [
@@ -73,6 +74,11 @@
       enable = true;
       extraArgs = "--keep 5";
     };
+  };
+
+  environment.variables = {
+    XCURSOR_THEME = "Bibata-Original-Classic";
+    XCURSOR_SIZE = "20"; # optional
   };
 
   # Some programs need SUID wrappers, can be configured further or are
