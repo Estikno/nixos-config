@@ -8,6 +8,7 @@
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/nnn.nix
     ../../modules/home-manager/rofi.nix
+    ../../modules/home-manager/udiskie.nix
   ];
 
   home.username = "david";
@@ -25,6 +26,8 @@
     feh
     premake5
     btop
+    dunst
+    xfce.thunar
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

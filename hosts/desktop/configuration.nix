@@ -16,6 +16,7 @@
       ../../modules/nixos/qtile.nix
       ../../modules/nixos/screen.nix
       ../../modules/nixos/mouse.nix
+      ../../modules/nixos/udisks2.nix
     ];
 
   # Use latest kernel.
