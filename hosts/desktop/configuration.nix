@@ -59,6 +59,7 @@
     bat
     bibata-cursors 
     unzip
+    nh
   ];
 
   fonts.packages = with pkgs; [
@@ -69,12 +70,18 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Add an automatic generation cleanup tool that leaves as many as you want available
-  programs.nh = {
-    enable = true;
-    clean = {
-      enable = true;
-      extraArgs = "--keep 5";
-    };
+  #programs.nh = {
+  #  enable = true;
+  #  clean = {
+  #    enable = true;
+  #    extraArgs = "--keep 5";
+  #  };
+  #};
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 10d";
   };
 
   environment.variables = {
