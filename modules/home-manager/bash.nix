@@ -38,6 +38,11 @@
         }
       }
 
+      # Aliases
+      alias ls='ls --color=auto'
+      alias la='ls -la'
+      alias grep='grep --color=auto'
+
       # Display system infor on terminal start
       fastfetch
     '';
