@@ -7,6 +7,7 @@
     ../../modules/home-manager/fastfetch.nix
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/nnn.nix
+    ../../modules/home-manager/rofi.nix
   ];
 
   home.username = "david";

@@ -56,8 +56,6 @@
     fzf
     ripgrep
     bat
-
-    rofi
   ];
 
   fonts.packages = with pkgs; [
