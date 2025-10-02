@@ -56,7 +56,8 @@
     scrolloff = 8;
 
     # Reduce which-key timeout to 10ms
-    timeoutlen = 250;
+    # timeoutlen = 250;
+    timeoutlen = 10;
     # ttimeoutlen = 20;
 
     # Set encoding type
