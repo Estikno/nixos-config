@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   imports = [
@@ -30,6 +30,7 @@
     btop
     dunst
     xfce.thunar
+    inputs.nixvim.packages.${system}.default
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

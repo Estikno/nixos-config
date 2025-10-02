@@ -3,6 +3,7 @@
 {
   programs.bash = {
     enable = true;
+    enableCompletion = true;
     initExtra = ''
       # Prompt
       export PS1='\[\e]0;\u@\h: \w\a\]\[\e[92m\]\u\[\e[0m\] in \[\e[96;1m\]\w\[\e[0m\] \[\e[92;1m\]\[\e[0m\] '

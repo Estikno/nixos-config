@@ -12,9 +12,10 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim.url = "path:./modules/home-manager/nixvim/";
   };
 
-  outputs = {self, nixpkgs, home-manager, ...}@inputs:
+  outputs = {self, nixpkgs, home-manager, nixvim, ...}@inputs:
     let 
       lib = nixpkgs.lib;
     in {
