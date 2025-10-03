@@ -26,7 +26,6 @@
     # fastfetch (No need to be installed here, it gets enabled somewhere else)
     lazygit
     feh
-    premake5
     btop
     dunst
     xfce.thunar

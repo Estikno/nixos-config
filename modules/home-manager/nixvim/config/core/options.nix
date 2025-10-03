@@ -3,13 +3,13 @@
     number = true;
     relativenumber = true;
 
-    tabstop = 2;
-    softtabstop = 2;
-    showtabline = 2;
+    tabstop = 4;
+    softtabstop = 4;
+    showtabline = 4;
     expandtab = true;
 
     smartindent = true;
-    shiftwidth = 2;
+    shiftwidth = 4;
 
     breakindent = true;
 
