@@ -15,30 +15,41 @@
     nixvim.url = "path:./modules/home-manager/nixvim/";
   };
 
-  outputs = {self, nixpkgs, home-manager, nixvim, ...}@inputs:
-    let 
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nixvim,
+      ...
+    }@inputs:
+    let
       lib = nixpkgs.lib;
-    in {
-    nixosConfigurations = {
-      desktop = lib.nixosSystem {
-        system = "x86_64-linux";
-	modules = [
-	  ./hosts/desktop/configuration.nix
+      system = "x86_64-linux";
+    in
+    {
+      nixosConfigurations = {
+        desktop = lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/desktop/configuration.nix
 
-	  # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+            # make home-manager as a module of nixos
+            # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
 
-            home-manager.users.david = import ./hosts/desktop/home.nix;
+              home-manager.users.david = import ./hosts/desktop/home.nix;
 
-            # Also pass inputs to home-manger modules
-            home-manager.extraSpecialArgs = {inherit inputs;};
-          }
-	];
+              # Also pass inputs to home-manger modules
+              home-manager.extraSpecialArgs = { inherit inputs; };
+            }
+          ];
+        };
       };
+
+      templates = import ./dev-shells;
     };
-  };
 }
