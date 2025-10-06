@@ -46,8 +46,18 @@
                     vcpkg
                     vcpkg-tool
                     libgcc
+                    gcc
+                    gnumake
+                    pkg-config
+                    ninja
                   ]
                   ++ (if system == "aarch64-darwin" then [ ] else [ gdb ]);
+                shellHook = ''
+                  # Define VCPKG_ROOT automatically if not set
+                  if [ -z "$VCPKG_ROOT" ]; then
+                    export VCPKG_ROOT="$PWD/vcpkg"
+                  fi
+                '';
               };
         }
       );
