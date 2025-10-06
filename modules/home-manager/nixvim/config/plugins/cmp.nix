@@ -25,7 +25,11 @@
           maxViewEntries = 30;
         };
         formatting = {
-          fields = ["kind" "abbr" "menu"];
+          fields = [
+            "kind"
+            "abbr"
+            "menu"
+          ];
         };
         window = {
           completion = {
@@ -39,12 +43,12 @@
           };
         };
         sources = [
-          {name = "nvim_lsp";}
-          {name = "luasnip";}
-          {name = "buffer";}
-          {name = "nvim_lua";}
-          {name = "path";}
-          {name = "crates";}
+          { name = "nvim_lsp"; }
+          { name = "luasnip"; }
+          { name = "buffer"; }
+          { name = "nvim_lua"; }
+          { name = "path"; }
+          { name = "crates"; }
         ];
         mapping = {
           "<Tab>" = "cmp.mapping.confirm({ select = true })";
@@ -55,6 +59,8 @@
           "<C-k>" = "cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })";
           "<C-n>" = "cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })";
           "<C-p>" = "cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })";
+          "<Down>" = "cmp.mapping.select_next_item()";
+          "<Up>" = "cmp.mapping.select_prev_item()";
           "<C-e>" = "cmp.mapping.close()";
         };
       };
