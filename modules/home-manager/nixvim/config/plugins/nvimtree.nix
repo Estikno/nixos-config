@@ -8,6 +8,14 @@
         silent = true;
       };
     }
+    {
+      mode = "n";
+      action = "<cmd>NvimTreeFindFileToggle<CR>";
+      key = "<leader>e";
+      options = {
+        silent = true;
+      };
+    }
   ];
   plugins.nvim-tree = {
     enable = true;
