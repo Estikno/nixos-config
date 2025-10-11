@@ -42,7 +42,6 @@
     vlc
     ffmpeg
     nh
-    libxcvt
   ];
 
   # Enable FLakes
