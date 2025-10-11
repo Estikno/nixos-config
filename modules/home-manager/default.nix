@@ -12,5 +12,6 @@
     ./gtk.nix
     ./bash.nix
     ./qtile.nix
+    ./wallpapers.nix
   ];
 }
