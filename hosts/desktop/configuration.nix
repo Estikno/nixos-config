@@ -8,22 +8,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../modules/nixos
       ../../modules/nixos/nvidia.nix
-      ../../modules/nixos/language.nix
-      ../../modules/nixos/sound.nix
-      ../../modules/nixos/bootloader.nix
-      ../../modules/nixos/ly.nix
-      ../../modules/nixos/qtile.nix
-      ../../modules/nixos/screen.nix
-      ../../modules/nixos/mouse.nix
-      ../../modules/nixos/udisks2.nix
-      ../../modules/nixos/nh.nix
-      ../../modules/nixos/gc.nix
-      ../../modules/nixos/users.nix
-      ../../modules/nixos/network.nix
-      ../../modules/nixos/fonts.nix
       # ../../modules/nixos/tlp.nix
       # ../../modules/nixos/intel.nix
+      # ../../modules/nixos/wifi.nix
     ];
 
   # Use latest kernel.
@@ -52,6 +41,7 @@
     fd
     vlc
     ffmpeg
+    nh
   ];
 
   # Enable FLakes
