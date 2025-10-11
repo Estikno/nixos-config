@@ -17,28 +17,17 @@
       ../../modules/nixos/screen.nix
       ../../modules/nixos/mouse.nix
       ../../modules/nixos/udisks2.nix
+      ../../modules/nixos/nh.nix
+      ../../modules/nixos/gc.nix
+      ../../modules/nixos/users.nix
+      ../../modules/nixos/network.nix
+      ../../modules/nixos/fonts.nix
+      # ../../modules/nixos/tlp.nix
+      # ../../modules/nixos/intel.nix
     ];
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_6_12;
-
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.david = {
-    isNormalUser = true;
-    description = "david";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -61,33 +50,12 @@
     unzip
     unrar
     fd
-    nh
     vlc
     ffmpeg
   ];
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.fira-code
-  ];
-
   # Enable FLakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Add an automatic generation cleanup tool that leaves as many as you want available
-  #programs.nh = {
-  #  enable = true;
-  #  clean = {
-  #    enable = true;
-  #    extraArgs = "--keep 5";
-  #  };
-  #};
-
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 10d";
-  };
 
   environment.variables = {
     XCURSOR_THEME = "Bibata-Original-Classic";
