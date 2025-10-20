@@ -36,12 +36,18 @@
     ripgrep
     bat
     bibata-cursors 
+    zip
     unzip
     unrar
     fd
+    file
     vlc
     ffmpeg
     nh
+    jq
+    poppler
+    resvg
+    ueberzugpp
   ];
 
   # Enable FLakes
