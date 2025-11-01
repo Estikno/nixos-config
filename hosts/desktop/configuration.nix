@@ -48,6 +48,7 @@
     poppler
     resvg
     ueberzugpp
+    gparted
   ];
 
   # Enable FLakes
