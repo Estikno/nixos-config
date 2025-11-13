@@ -71,18 +71,12 @@
   extraConfigLua = ''
        local dap, dapui = require("dap"), require("dapui")
        dap.listeners.before.attach.dapui_config = function()
-       	dapui.open()
-        dap.repl.close()
+       	pcall(dapui.open)
+        pcall(dap.repl.close)
        end
        dap.listeners.before.launch.dapui_config = function()
-       	dapui.open()
-        dap.repl.close()
-       end
-       dap.listeners.before.event_terminated.dapui_config = function()
-       	dapui.close()
-       end
-       dap.listeners.before.event_exited.dapui_config = function()
-       	dapui.close()
+       	pcall(dapui.open)
+        pcall(dap.repl.close)
        end
 
       local dap = require('dap')
@@ -114,7 +108,6 @@
 
          vim.cmd('startinsert')
          dap.continue()
-         dap.repl.close()
       end)
 
       vim.keymap.set('n', '<Leader>dt', function() dapui.toggle() end)
@@ -155,7 +148,7 @@
       dap.configurations.cpp = {
     	{
     		name = "Launch",
-    		type = "gdb",
+    		type = "codelldb",
     		request = "launch",
     		program = function()
     			return vim.fn.input('Path of the executable: ', vim.fn.getcwd() .. '/', 'file')
