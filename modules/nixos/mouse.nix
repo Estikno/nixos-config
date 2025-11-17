@@ -8,5 +8,6 @@
       accelProfile = "flat";
       accelSpeed = "0";
     };
+    touchpad.naturalScrolling = true;
   };
 }
