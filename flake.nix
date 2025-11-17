@@ -48,6 +48,25 @@
             }
           ];
         };
+        laptop = lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/laptop/configuration.nix
+
+            # make home-manager as a module of nixos
+            # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.users.david = import ./hosts/laptop/home.nix;
+
+              # Also pass inputs to home-manger modules
+              home-manager.extraSpecialArgs = { inherit inputs; };
+            }
+          ];
+        };
       };
 
       templates = import ./dev-shells;
