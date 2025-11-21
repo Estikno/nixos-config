@@ -24,7 +24,6 @@
     inputs.nixvim.packages.${system}.default
     meld
     flameshot
-    localsend
 
     tor-browser-bundle-bin
 

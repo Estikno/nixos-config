@@ -16,6 +16,7 @@
       ./network.nix
       ./fonts.nix
       ./printing.nix
+      ./localsend.nix
       # ./tlp.nix
       # ./nvidia.nix
       # ./intel.nix
